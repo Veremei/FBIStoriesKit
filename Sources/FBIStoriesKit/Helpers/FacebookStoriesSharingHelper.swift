@@ -4,7 +4,7 @@ import Foundation
 public final class FacebookStoriesSharingHelper: FBIStoriesSharingHelper {
     private let facebookAppId: String
 
-    init(facebookAppId: String) {
+    public init(facebookAppId: String) {
         self.facebookAppId = facebookAppId
     }
 

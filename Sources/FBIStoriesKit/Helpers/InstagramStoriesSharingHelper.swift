@@ -3,6 +3,8 @@ import Foundation
 
 public final class InstagramStoriesSharingHelper: FBIStoriesSharingHelper {
 
+    public init() {}
+
     public func canShare() -> Bool {
         UIApplication.shared.canOpenURL(shareUrl)
     }
