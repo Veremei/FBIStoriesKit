@@ -1,6 +1,6 @@
 import UIKit
 
-public struct YPFBIStoriesObject {
+public struct FBIStoriesObject {
     public enum BackgroundContent {
         case image(UIImage)
         case imageData(Data)

@@ -1,13 +1,13 @@
 import UIKit
 import Foundation
 
-final class YPInstagramStoriesSharingHelper: YPFBIStoriesSharingHelper {
+public final class InstagramStoriesSharingHelper: FBIStoriesSharingHelper {
 
-    func canShare() -> Bool {
+    public func canShare() -> Bool {
         UIApplication.shared.canOpenURL(shareUrl)
     }
 
-    func share(_ object: YPFBIStoriesObject, completion: @escaping (_ success: Bool) -> ()) {
+    public func share(_ object: FBIStoriesObject, completion: @escaping (_ success: Bool) -> ()) {
         guard canShare() else {
             completion(false)
             return
@@ -28,7 +28,7 @@ final class YPInstagramStoriesSharingHelper: YPFBIStoriesSharingHelper {
 }
 
 
-extension YPFBIStoriesObject {
+extension FBIStoriesObject {
     fileprivate func makePasteboardItem() -> [String: Any] {
         var item: [String: Any] = [:]
 

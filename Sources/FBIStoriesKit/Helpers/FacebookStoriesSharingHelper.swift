@@ -1,18 +1,18 @@
 import UIKit
 import Foundation
 
-final class YPFacebookStoriesSharingHelper: YPFBIStoriesSharingHelper {
+public final class FacebookStoriesSharingHelper: FBIStoriesSharingHelper {
     private let facebookAppId: String
 
     init(facebookAppId: String) {
         self.facebookAppId = facebookAppId
     }
 
-    func canShare() -> Bool {
+    public func canShare() -> Bool {
         UIApplication.shared.canOpenURL(shareUrl)
     }
 
-    func share(_ object: YPFBIStoriesObject, completion: @escaping (_ success: Bool) -> ()) {
+    public func share(_ object: FBIStoriesObject, completion: @escaping (_ success: Bool) -> ()) {
         guard canShare() else {
             completion(false)
             return
@@ -36,7 +36,7 @@ final class YPFacebookStoriesSharingHelper: YPFBIStoriesSharingHelper {
 }
 
 
-extension YPFBIStoriesObject {
+extension FBIStoriesObject {
     fileprivate func makePasteboardItem() -> [String: Any] {
         var item: [String: Any] = [:]
 
